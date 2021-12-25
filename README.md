@@ -36,7 +36,7 @@ Developer assume no liability and is not responsible for any misuse or damage ca
 > If the validity period of the certificate has elapsed
 ```bash
 # Generate x509 certificate for 'localhost' domain name
-$ openssl req -x509 -out server.crt -keyout server.key -newkey rsa:2048 -nodes -sha256 -subj '/CN=localhost' -extensions EXT -config <(printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
+$ openssl req -x509 -out server.crt -keyout server.key -newkey rsa:4096 -nodes -sha256 -subj '/CN=localhost' -extensions EXT -config <(printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
 $ cat server.crt server.key > server.pem
 ```
 
