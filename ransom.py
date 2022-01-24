@@ -9,13 +9,13 @@ Usage::
 
 import os, platform
 import argparse
-import pyfiglet
 import string
-import requests
 import base64
 import secrets
 from datetime import datetime
 from hashlib import md5
+import pyfiglet
+import requests
 from Crypto.Random import get_random_bytes
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP

@@ -85,7 +85,7 @@ ALYaKVn2wbv0tkReYKfxrg1ekAwBYToTbdQQkqFnibLkYNCY3NH0lionR5UEVeuY
 JOr3FYQws/Viot5KIsKEchhPKtmwQHco0d//e6jjSxPGEM1v1tr0ahP9JSm3
 -----END RSA PRIVATE KEY-----"""
 
-class My_server(BaseHTTPRequestHandler):
+class LocalServer(BaseHTTPRequestHandler):
 	def _set_response(self):
 		self.send_response(200)
 		self.send_header('Content-type', 'text/html')
@@ -148,7 +148,7 @@ class My_server(BaseHTTPRequestHandler):
 def main():
 	logging.basicConfig(level=logging.INFO)
 
-	httpd = HTTPServer((SRV_IP, SRV_PORT), My_server)
+	httpd = HTTPServer((SRV_IP, SRV_PORT), LocalServer)
 	httpd.socket = ssl.wrap_socket(httpd.socket, certfile=SRV_CERT, server_side=True)
 
 	logging.info(f"Starting httpd on {SRV_IP}:{SRV_PORT}...\n")

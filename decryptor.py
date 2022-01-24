@@ -10,8 +10,8 @@ Usage::
 import os
 import argparse
 import string
-from Crypto.Cipher import AES
 from hashlib import md5
+from Crypto.Cipher import AES
 
 # colors
 WHITE = '\033[0m'
